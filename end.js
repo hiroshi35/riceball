@@ -11,10 +11,6 @@ new Vue({
   methods: {
     rank (num) {},
     getSheet () {
-      const url = 'https://docs.google.com/spreadsheets/d/1fU4tkYNFNmR4olsxIPxtErTEsDomElehJxySmso0Hrg/edit?usp=sharing';
-      const SpreadSheet = SpreadsheetApp.openByUrl(url);
-      console.log(SpreadSheet.getName());
-      console.log('Aloha');
     }
   },
 });

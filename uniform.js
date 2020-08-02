@@ -1,9 +1,28 @@
 new Vue({
   el: '#app',
+  mounted() {
+    // this.tablett();
+  },
   methods: {
-    submitss () {
-      window.location = 'end.html';
-      console.log('ALADIN')
+    // tablett () {
+    //   const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1fU4tkYNFNmR4olsxIPxtErTEsDomElehJxySmso0Hrg/edit#gid=0';
+    //   Tabletop.init({ key: publicSpreadsheetUrl,callback: this.cbfunc,simpleSheet: true })
+
+    //   this.cbfunc();
+    // },
+    // cbfunc (data, tabletop) {
+    //   console.log(data);
+    // },
+    submits () {
+      // window.location = 'end.html';
+      console.log(this.tempschool);
+      axios.defaults.headers.post['Content-Type'] ='application/json';
+      const api = 'https://script.google.com/macros/s/AKfycbxFtepC8NUeLG5R5mPidsq57LcB0kbeWrhgC_nu8_p8TyKbgkE/exec';
+      axios.get(api).then(rsp => {
+        console.log(rsp);
+      }).catch(e => {
+        console.log(e);
+      })
     },
     schoolFromCity (city) {
       switch (city) {
@@ -57,6 +76,7 @@ new Vue({
   },
   data: {
     tempcity: '',
+    tempschool: '',
     city: [
       '新北市',
       '台北市',
